@@ -1,35 +1,37 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class HeroesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @hero = heroes(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get heroes_url, as: :json
     assert_response :success
   end
 
-  test "should create hero" do
-    assert_difference("Hero.count") do
+  test 'should create hero' do
+    assert_difference('Hero.count') do
       post heroes_url, params: { hero: { nome: @hero.nome } }, as: :json
     end
 
     assert_response :created
   end
 
-  test "should show hero" do
+  test 'should show hero' do
     get hero_url(@hero), as: :json
     assert_response :success
   end
 
-  test "should update hero" do
+  test 'should update hero' do
     patch hero_url(@hero), params: { hero: { nome: @hero.nome } }, as: :json
     assert_response :success
   end
 
-  test "should destroy hero" do
-    assert_difference("Hero.count", -1) do
+  test 'should destroy hero' do
+    assert_difference('Hero.count', -1) do
       delete hero_url(@hero), as: :json
     end
 

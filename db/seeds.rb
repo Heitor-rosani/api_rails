@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Hero.delete_all
 
 5.times do
