@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Authenticable
   private
 
@@ -5,8 +7,8 @@ module Authenticable
     @token ||= request.headers['Authorization']
 
     unless valid_token?
-      render json: {errors: 'Forneça um token válido!'}, 
-      status: :unauthorized
+      render json: { errors: 'Forneça um token válido!' },
+             status: :unauthorized
     end
   end
 
