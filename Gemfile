@@ -9,18 +9,16 @@ gem 'bootsnap', require: false
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 gem 'tzinfo-data'
+gem 'rubocop', '~> 1.26'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'sqlite3', '~> 1.4'
+  gem 'faker', '~> 2.20'
 end
 
 group :development do
 end
-
-gem 'faker', '~> 2.20', group: :development
-
-gem 'rubocop', '~> 1.26'
 
 group :production do
   gem "pg", "~> 1.3"
